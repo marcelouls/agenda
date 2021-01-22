@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Amet</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		body{
+			
+			background: #9a6eac;
+		}
+
+		canvas{
+
+			margin: 1em 1em;			
+		}
+
+		#youtube{
+			width: 370px;
+			height: auto;
+			margin:1em 1em;
+			
+		}
+		#mapa{
+			width: 370px;
+		    height:auto; 
+		    margin:1em 1em;
+
+		}
+		#links{
+			text-align: center;
+
+		}
+		
+	</style>
+
+</head>
+<body>
+
+		
+		<div class="col-md-6 col-xs-12 ">
+			<canvas width="370" height="400"></canvas>
+		</div>
+		<div class="col-md-6 col-xs-12">
+			<iframe id="youtube" src="https://www.youtube.com/embed/oAA7juPPW2c"></iframe>
+		</div>
+		
+			
+		<div class="col-md-12 col-xs-12">
+		<iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1974.488596803086!2d-34.91908070494529!3d-8.205047324223452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x18f6e14e14819274!2sBrisa%20Mar%20Center!5e0!3m2!1ses!2sbr!4v1601935835307!5m2!1ses!2sbr"  frameborder="0" style="border:1px solid gray;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+		</div>
+		
+	<!-- 	<div  id="links" class="col-md-12 col-xs-12">
+			<a href="https://www.instagram.com/amet.psicologia/"><p style="color:#18184a;font-size; font-size: 20px; font-weight: bold;text-align: center"><i class="fa fa-instagram" style="color:#f04511"></i> -  amet.psicologia </p></a>
+ 	 			
+
+    			<a href="https://www.facebook.com/georgiaamenezes/"><p style="color:#18184a;font-size; font-size: 20px; font-weight: bold; text-align: center"><i class="fa fa-facebook" style="color:blue"></i> -  georgiaamet</p></a>
+    			
+ 			
+    			<p style="color:#18184a;font-size; font-size: 20px; font-weight: bold;text-align: center"><i class="fa fa-whatsapp" style="color:green"></i> - (81) 9 8699 5594
+    			</p>
+    			
+    			
+    			<p style="color:#18184a;font-size; font-size: 20px; font-weight: bold;text-align: center"><i class="glyphicon  glyphicon-envelope" style="color:gray"></i> - contato@ametpsicologia.com
+    			</p>
+		</div>	 -->
+				
+		
+
+<script type="text/javascript">
+	var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    var ctx = tela.getContext("2d");
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 370, 400);
+    
+	  function desenhaCirculo(x, y, raio, cor) {
+
+        pincel.fillStyle = cor; 
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * 3.14);
+        pincel.fill();
+
+    }
+
+    desenhaCirculo(300,400,500,'#af9fc6');
+    desenhaCirculo(500,10,300,'#4f89c8');
+    desenhaCirculo(-100,10,300,'#90c747');
+    desenhaCirculo(70,220,70,'#9a6eac'); 
+    desenhaCirculo(130,330,70,'#6690CC');
+    desenhaCirculo(195,220,70,'#EFBA1C');  
+    desenhaCirculo(260,330,70,'#8DC56C'); 
+    // desenhaCirculo(310,220,60,'#191970'); 
+    
+      
+    ctx.font = "120px Segoe Script";
+    ctx.fillStyle = "#191970" ;
+    ctx.fillText("Amet",10,120);
+    ctx.font = "25px Segoe Print";
+    ctx.fillStyle = "#191970" ;
+    ctx.fillText("Psicologia & Saúde",40,140);
+
+    ctx.font = "25px Courier Newk";
+    ctx.fillStyle = "white" ;
+    ctx.fillText("Contato",30,230);
+
+    ctx.font = "25px Courier Newk";
+    ctx.fillStyle = "white" ;
+    ctx.fillText("Cursos",90,340);
+
+    ctx.font = "25px Courier Newk";
+    ctx.fillStyle = "white" ;
+    ctx.fillText("Mindfullnes",135,230);
+
+    ctx.font = "25px Courier Newk";
+    ctx.fillStyle = "white" ;
+    ctx.fillText("Testes",230,340);
+
+
+
+    function dispara(evento){
+		var x = evento.pageX - tela.offsetLeft;
+		var y = evento.pageY - tela.offsetTop;
+
+	
+
+		if ((x > 10) &&
+		    (x < 130) &&
+		    (y > 160) &&
+		    (y < 280)){
+
+			window.open("http://www.ametpsicologia.com/contato.html" , "ventana1" , "width=120,height=300,scrollbars=NO");
+
+	}
+
+}
+
+
+
+	tela.onclick = dispara;
+
+    
+  
+</script>
+</body>
+</html>

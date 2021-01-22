@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>WeGoNow!</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<style type="text/css">
+
+	.row {
+		display: inline-flex;
+	}
+	.foto_principal {
+		width: 50%;
+	}
+	#uno{
+		width: 50%;
+		margin-top: -15px;
+		border-radius: 0 0 150% 0;
+	}
+	.texto_principal{
+		width:50%;
+		margin-left: -20%;
+	}
+	#teste{
+		display: none;
+	}
+	h1{
+		color: #335E8A;
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 30px;
+		font-weight: bold;
+	}
+	p{
+		color: #46709B;
+		text-align: justify;
+	}
+
+	.botones{
+		width: 50%;
+		margin: auto;
+		margin-top: 20%;
+		padding-right: 20%;
+	}
+	
+
+	.portfolio{
+		width: 100%;
+		height: auto;
+		background-image: url('imagens/marmol.jpg');
+
+	}
+	.carousel-inner > .item > img,
+  	.carousel-inner > .item > a > img {
+    width: 50%;
+    height: auto;
+    margin: auto;
+  	}
+
+  	
+
+	@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .row{
+  	display: block;
+  }
+   .foto_principal, .texto_principal {
+   	text-align: center;
+  	width: auto;
+
+  }
+  #uno{
+  	width: 30%;
+  	border-radius: 50%;
+  	margin: 10%;
+  }
+  #teste{
+  	display: all;
+  }
+  .botones{
+  	display: inline;
+  	text-align: center;
+  }
+  h1{
+		color: #335E8A;
+		font-weight: bold;
+		width: 80%;
+		margin-left: 20%;
+		font-family: 'Josefin Sans', sans-serif;
+		text-align: center;
+
+  }
+  p{
+  		width: auto;
+		margin: 0 10% 10% 20%;
+		color: #46709B;
+		text-align: justify;
+	}
+  .portfolio{
+  	padding: 10%;
+  }
+ 
+}
+	
+</style>
+
+</head>
+<body>
+	<div class="row">
+	<div class="foto_principal">
+		<img id="uno" src="imagens/fotoperfil.png">
+	</div>
+	<div class="texto_principal">
+		<h1>Marcelo Alejandro Araya Palacios</h1>
+		<h1 id="teste">Marcelo Alejandro <br> Araya Palacios</h1>
+		<p>    Chileno morando no Brasil, amante da area de TI , Suporte Internacional  na MV SISTEMAS, aprofundando em <strong>PHP, HTML, CSS, JS, BOOTSTRAP, CANVAS</strong> </p><br>
+		
+	</div>
+	
+	</div>
+	
+	<div class="portfolio">
+		<div class="row">
+			<div class="container">
+  		
+  				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			    <!-- Indicators -->
+			    <ol class="carousel-indicators" >
+			      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			      <li data-target="#myCarousel" data-slide-to="1"></li>
+			      <li data-target="#myCarousel" data-slide-to="2"></li>
+			      <!-- <li data-target="#myCarousel" data-slide-to="3"></li> -->
+			    </ol>
+
+			    <!-- Wrapper for slides -->
+			    <div class="carousel-inner" role="listbox">
+			    			
+			     <div class="item active">
+			      	<!-- <iframe src="http://marceloarayapalacios.com/forest.html"></ifr -->
+			      		<a href="http://marceloarayapalacios.com/forest.html">
+			        <img src="../maap/images/forest.jpg" alt="forest" >
+			        </a>
+			        <div class="carousel-caption">
+			          
+			          <p></p>
+			        </div>
+			      </div>
+
+
+			      <div class="item">
+			      <!-- 	<iframe src="http://marceloarayapalacios.com/recife.html"></iframe> -->
+			        <a href="http://marceloarayapalacios.com/recife.html"><img src="../maap/images/siterecife.jpg" alt="siterecife" ></a>
+			        <div class="carousel-caption">
+			          
+			          <p></p>
+			        </div>
+			      </div>
+			    
+			      <div class="item"><!-- 
+			      	<iframe src="http://ametpsicologia.com"></iframe> -->
+			        <a href="http://ametpsicologia.com"><img src="../maap/images/index.jpg" alt="index" ></a>
+			        <div class="carousel-caption">
+			         
+			          <p></p>
+			        </div>
+			      </div>
+
+  
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			      <span class="sr-only">Previous</span>
+			    </a>
+			    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			      <span class="sr-only">Next</span>
+   			 </a>
+  
+    </div>
+
+    <!-- Left and right controls -->
+			 
+  		</div>
+		</div>
+		</div>
+	</div>
+
+	
+
+
+
+</body>
+</html>

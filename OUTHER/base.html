@@ -1,0 +1,218 @@
+<?php
+$data="";
+$hora_inicio="";
+$detalhe="";
+
+$codigo=123456;
+session_start();
+
+if(!isset($_SESSION['usuario'])){
+		header('Location: agenda.php?erro=1');
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head lang="pt-br">
+	<title>Menu</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">  	
+  	</script>	
+	<style>
+		h3 {
+			text-align: left;
+		}
+		body{
+			background: grey;
+		}
+	
+	
+	</style>
+
+</head>
+<body>
+
+<div class="row">
+
+<div class="row">
+<div class="col-md-4 col-xs-3">
+<a href="opcoes.php">
+	<button style="border:none;background-color:lightgrey;float:right;margin-top:15px">
+	<span class="glyphicon glyphicon-menu-left" style="float:left;font-size:30px;color:#34475c;background-color:lightgrey;border:none;">
+	</span></button></div></a>
+<div class="col-md-4 col-xs-6">
+<h1>Anamnese</h1></div>
+<div class="col-md-1 col-xs-3">
+	
+	</div>
+	</div>
+
+
+
+
+    <div class="col-md-4"></div>
+
+	<div class="col-md-4 col-xs-12">
+	<form method="post" action="salva_anamnese.php">
+        <div style="border: solid 1px;border-radius:15px; padding:10px">
+			<h3> Identificação Pessoal</h3><br>
+			<label> Cod. Paciente:</label><input id="codpac"  type="text" name="cd_paciente" value="'.$dados_paciente['cd_paciente'].'">
+		    <label>Nome : '.$dados_paciente['nm_paciente'].'</label> 
+		    <label>Data de Nascimento : '.$dados_paciente['dt_nacimento'].'</label>     <label>Telefone : '.$dados_paciente['fone'].'</label><br>
+		    <label>Data de Inicio :'.$dados_paciente['data_registro'].'</label><br>
+		</div>
+	</div>
+	<div  class="col-md-4"></div>
+</div>
+	<br>
+	<div class="col-md-4"></div>
+<div class="container col-md-4" style="border: solid 1px;border-radius:15px; padding:10px>
+	<div class="row">
+			<br>
+			<div class="col-md-12 col-xs-12">	
+			
+ 				<div class="panel-group">
+    				<div class="panel panel-default">
+    					<div class="panel-heading">
+							<h2 class="panel-title">
+							<a data-toggle="collapse" href="#collapse3">Queixa Principal:</a>
+							</h2>
+								<div id="collapse3" class="panel-collapse collapse">
+									<textarea name="queixa_principal" placeholder="Queixa Principal" maxlength="300"></textarea>
+ 								</div>
+						</div>
+				</div>
+			</div>
+	
+	</div>
+	<div class="col-md-4"></div>	
+<br><br><br>
+</div>
+</div>
+<div class="col-md-4"></div>
+<div class="container col-md-4" style="border: solid 1px;border-radius:15px; padding:10px>
+
+	<div class="row">
+		
+		<div class="col-md-12" col-xs-12>
+		<br><br>
+ 			<div class="panel-group">
+    		<div class="panel panel-default">
+    		<div class="panel-heading">
+				<h2 class="panel-title">
+			<a data-toggle="collapse" href="#collapse4">Evolução da Queixa:</a>
+				</h2>
+			<div id="collapse4" class="panel-collapse collapse">
+	
+			<br>
+			<a data-toggle="collapse" href="#collapse5"><label>Como começõu:</label></a><br>
+			<div id="collapse5" class="panel-collapse collapse">
+			<textarea name="como_comecou" placeholder="Escreva aqui...." maxlength="300"></textarea>
+		</div>
+		<a data-toggle="collapse" href="#collapse6"><label>Foi repentino ou gradual:</label></a><br>
+		<div id="collapse6" class="panel-collapse collapse">
+			<textarea name="repentino" placeholder="Escreva aqui...." maxlength="300"></textarea><br>
+		</div>
+		<a data-toggle="collapse" href="#collapse7"><label>Quais transformações ocorreram:</label></a><br>
+		<div id="collapse7" class="panel-collapse collapse">
+			<textarea name="transformacoes" placeholder="Escreva aqui...." maxlength="200"></textarea><br>
+		</div>
+		<a data-toggle="collapse" href="#collapse8"><label>Sintomas:</label></a><br>
+		<div id="collapse8" class="panel-collapse collapse">
+			<textarea name="sintomas" placeholder="Escreva aqui...." maxlength="300"></textarea><br>
+		</div>
+		<a data-toggle="collapse" href="#collapse9"><label>Queixas Cognitivas:</label></a><br>
+		<div id="collapse9" class="panel-collapse collapse">
+			<input type="checkbox" name="integridade" value="S"><label>Integridade Sensorial</label>
+			<input type="checkbox" name="percepcao" value="S"><label>Percepção</label>
+			<input type="checkbox" name="atencao" value="S"><label>Atenção</label>
+			<input type="checkbox" name="memoria" value="S"><label>Memória</label><br>
+			<textarea name="queixas_congnitivas" placeholder="Escreva aqui...." maxlength="300"></textarea><br>
+		</div>
+		<a data-toggle="collapse" href="#collapse10"><label>Queixas Afetivo-emocionais:</label></a><br>
+		<div id="collapse10" class="panel-collapse collapse">
+			<input type="checkbox" name="volicao" value="S"><label>Volicao</label>
+			<input type="checkbox" name="afeto" value="S"><label>Afeto</label>
+			<input type="checkbox" name="humor" value="S"><label>Humor</label>
+			<input type="checkbox" name="ansiedade" value="S"><label>Ansiedade</label>
+			<input type="checkbox" name="medo" value="S"><label>Medo</label>
+			<input type="checkbox" name="culpa" value="S"><label>Culpa</label>
+			<input type="checkbox" name="raiva" value="S"><label>Raiva</label>
+			<input type="checkbox" name="luto" value="S"><label>Luto</label>
+			<input type="checkbox" name="desanimo" value="S"><label>Desanimo</label><br>
+			<textarea name="Afetivo_emocionais" placeholder="Escreva aqui...." maxlength="300"></textarea><br>
+		</div>
+		<a data-toggle="collapse" href="#collapse11"><label>Hábitos e rotina:</label></a><br>
+		<div id="collapse11" class="panel-collapse collapse">
+			<textarea name="habitos"	placeholder="Escreva aqui...." maxlength="300"></textarea><br>
+		</div>
+		<a data-toggle="collapse" href="#collapse12"><label>Vida Social:</label></a><br>
+		<div id="collapse12" class="panel-collapse collapse">
+			<textarea name="vida_social" placeholder="Escreva aqui...." maxlength="300"></textarea><br>
+		</div>
+		<a data-toggle="collapse" href="#collapse13"><label>Como está a saúde:</label></a><br>
+		<div id="collapse13" class="panel-collapse collapse">
+			<textarea name="saude" 	 placeholder="Escreva aqui...." maxlength="300"></textarea><br>
+		</div>
+		<a data-toggle="collapse" href="#collapse14"><label>Antecedentes Familiares (Casos semelhantes na familia):</label></a>
+		<br>
+		<div id="collapse14" class="panel-collapse collapse">
+			<textarea name="antecedentes" placeholder="Escreva aqui...."></textarea><br>
+		</div>
+		<a data-toggle="collapse" href="#collapse15"><label>História Familiar</label></a><br>
+		<div id="collapse15" class="panel-collapse collapse">
+			<textarea name="historia" placeholder="Escreva aqui...." maxlength="300"></textarea><br>
+		</div>
+		<a data-toggle="collapse" href="#collapse16"><label>Tratamento:</label></a><br>
+		<div id="collapse16" class="panel-collapse collapse">
+			<textarea name="tratamento" placeholder="Escreva aqui...." maxlength="300"></textarea><br>
+		</div>
+
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+
+	</div>
+	</div>
+
+
+		<div class="row">
+			<button class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved">  Salvar</span></button>
+	
+		</form>
+
+	</div>
+<div class="col-md-4"></div>
+
+
+		
+</body>
+</html>;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
